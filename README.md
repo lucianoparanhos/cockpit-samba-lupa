@@ -1,29 +1,31 @@
-cockpit-samba-lupa
+# cockpit-samba-lupa
 
-Um módulo personalizado do Cockpit para monitorar e gerenciar compartilhamentos Samba de forma simples, visual e integrada. Desenvolvido por lupa, com foco em servidores pessoais, NAS minimalistas e sistemas baseados em Linux com suporte a Btrfs.
+Um módulo personalizado do [Cockpit](https://cockpit-project.org/) para monitorar e gerenciar compartilhamentos Samba de forma simples, visual e integrada. Desenvolvido por **lupa**, com foco em servidores pessoais, NAS minimalistas e sistemas baseados em Linux com suporte a Btrfs.
 
- 
+&#x20;
 
-🚀 Recursos
+---
 
-Exibe status do Samba (smbstatus)
+## 🚀 Recursos
 
-Mostra o conteúdo do arquivo de configuração /etc/samba/smb.conf
+- Exibe status do Samba (`smbstatus`)
+- Mostra o conteúdo do arquivo de configuração `/etc/samba/smb.conf`
+- Lista conexões SMB ativas em tempo real
+- Pensado para expansão futura: edição remota, reinício de serviços, integração com Snapper/Btrfs
 
-Lista conexões SMB ativas em tempo real
+---
 
-Pensado para expansão futura: edição remota, reinício de serviços, integração com Snapper/Btrfs
+## 🔧 Tecnologias
 
-🔧 Tecnologias
+- [Cockpit Web Framework](https://cockpit-project.org/)
+- HTML + JavaScript + cockpit.spawn
+- Docker + Debian para ambiente de desenvolvimento isolado
 
-Cockpit Web Framework
+---
 
-HTML + JavaScript + cockpit.spawn
+## 📂 Estrutura do projeto
 
-Docker + Debian para ambiente de desenvolvimento isolado
-
-📂 Estrutura do projeto
-
+```bash
 cockpit-samba-lupa/
 ├── docker/                 # Ambiente de desenvolvimento
 │   ├── Dockerfile
@@ -35,67 +37,70 @@ cockpit-samba-lupa/
 │   └── style.css
 ├── LICENSE
 └── README.md
+```
 
-🔄 Executando localmente (modo desenvolvimento)
+---
 
-Requisitos:
+## 🔄 Executando localmente (modo desenvolvimento)
 
-Docker
+### Requisitos:
 
-Docker Compose
+- Docker
+- Docker Compose
 
+```bash
 git clone https://github.com/seu-usuario/cockpit-samba-lupa.git
 cd cockpit-samba-lupa/docker
 docker-compose up --build
+```
 
-Acesse https://localhost:9090 com:
+Acesse [https://localhost:9090](https://localhost:9090) com:
 
-Usuário: dev
+- **Usuário:** `dev`
+- **Senha:** definida via `passwd dev` dentro do container
 
-Senha: definida via passwd dev dentro do container
+---
 
-🌍 Modo de uso (após instalado)
+## 🌍 Modo de uso (após instalado)
 
-No painel Cockpit, você verá uma nova entrada lateral chamada "Samba". Nela:
+No painel Cockpit, você verá uma nova entrada lateral chamada **"Samba"**. Nela:
 
-Visualize conexões SMB ativas
+- Visualize conexões SMB ativas
+- Veja os compartilhamentos atuais
+- Acompanhe logs do Samba
+- (em breve) Edite o `smb.conf` e reinicie serviços
 
-Veja os compartilhamentos atuais
+---
 
-Acompanhe logs do Samba
-
-(em breve) Edite o smb.conf e reinicie serviços
-
-🎓 Para que serve?
+## 🎓 Para que serve?
 
 Ideal para:
 
-Quem usa Samba para compartilhar arquivos na LAN
+- Quem usa Samba para compartilhar arquivos na LAN
+- Usuários de RPi, Arch, Debian ou Ubuntu
+- Quem quer uma interface gráfica leve para acompanhar o Samba
+- Pequenos servidores caseiros com Cockpit instalado
 
-Usuários de RPi, Arch, Debian ou Ubuntu
+---
 
-Quem quer uma interface gráfica leve para acompanhar o Samba
+## 🏆 Licença
 
-Pequenos servidores caseiros com Cockpit instalado
+Este projeto está licenciado sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
-🏆 Licença
+---
 
-Este projeto está licenciado sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
-
-✨ Contribuindo
+## ✨ Contribuindo
 
 Pull Requests são bem-vindos! Planejo adicionar suporte a:
 
-Edição do smb.conf
-
-Criação de novos compartilhamentos
-
-Integração com Snapper e snapshots Btrfs
-
-Logs e diagnóstico
+- Edição do `smb.conf`
+- Criação de novos compartilhamentos
+- Integração com Snapper e snapshots Btrfs
+- Logs e diagnóstico
 
 Abra uma issue com sugestões ou envie melhorias diretamente.
 
-Desenvolvido com carinho por lupa.
-Leve, prático e direto ao ponto.
+---
+
+> Desenvolvido com carinho por **lupa**. Leve, prático e direto ao ponto.
 
